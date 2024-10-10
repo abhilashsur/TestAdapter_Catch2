@@ -96,6 +96,10 @@ Class :
             Duration = _testcase.OverallResult.Duration;
             Name = _testcase.Name;
             Outcome = _testcase.OverallResult.Success ? TestOutcomes.Passed : TestOutcomes.Failed;
+            if(testcase.OverallResult.Skipped)
+            {
+                Outcome = TestOutcomes.Skipped;
+            }
             StandardOut = _testcase.OverallResult.StdOut;
             StandardError = _testcase.OverallResult.StdErr;
 
@@ -420,6 +424,10 @@ Class :
                     _testcase = testcase;
 
                     Outcome = _testcase.OverallResult.Success ? TestOutcomes.Passed : TestOutcomes.Failed;
+                    if(_testcase.OverallResult.Skipped)
+                    {
+                        Outcome = TestOutcomes.Skipped;
+                    }
                     Duration = _testcase.OverallResult.Duration;
                     StandardOut = _testcase.OverallResult.StdOut;
                     StandardError = _testcase.OverallResult.StdErr;
