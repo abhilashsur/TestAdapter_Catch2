@@ -96,7 +96,7 @@ Class :
             Duration = _testcase.OverallResult.Duration;
             Name = _testcase.Name;
             Outcome = _testcase.OverallResult.Success ? TestOutcomes.Passed : TestOutcomes.Failed;
-            if(testcase.OverallResult.Skipped)
+            if(_testcase.OverallResult.Skipped)
             {
                 Outcome = TestOutcomes.Skipped;
             }

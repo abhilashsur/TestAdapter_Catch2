@@ -38,7 +38,7 @@ Class :
         public string   StdErr { get; private set; } = string.Empty;
         public string   StdOut { get; private set; } = string.Empty;
         public bool     Success { get; private set; } = false;
-        public bool Skipped { get; private set; } = false;
+        public bool     Skipped { get; private set; } = false;
 
         #endregion // Properties
 
